@@ -13,9 +13,9 @@
         const state = params.get('state');
         
         if (code) {
-            window.location.href = 'tenuki://?code=' + code + '&state=' + state;
+            window.location.href = 'tenuki.oauth://?code=' + code + '&state=' + state;
         } else if (error) {
-            window.location.href = 'tenuki://?error=' + error + '&state=' + state;
+            window.location.href = 'tenuki.oauth://?error=' + error + '&state=' + state;
         }
     </script>
 </body>
