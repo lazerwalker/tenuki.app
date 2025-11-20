@@ -10,11 +10,12 @@
         const params = new URLSearchParams(window.location.search);
         const code = params.get('code');
         const error = params.get('error');
+        const state = params.get('state');
         
         if (code) {
-            window.location.href = 'tenuki://oauth-callback?code=' + code;
+            window.location.href = 'tenuki://oauth-callback?code=' + code + '&state=' + state;
         } else if (error) {
-            window.location.href = 'tenuki://oauth-callback?error=' + error;
+            window.location.href = 'tenuki://oauth-callback?error=' + error + '&state=' + state;
         }
     </script>
 </body>
