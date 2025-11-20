@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Logging in...</title>
+</head>
+<body>
+    <p>Completing login...</p>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+        const error = params.get('error');
+        
+        if (code) {
+            window.location.href = 'tenuki://oauth-callback?code=' + code;
+        } else if (error) {
+            window.location.href = 'tenuki://oauth-callback?error=' + error;
+        }
+    </script>
+</body>
+</html>
